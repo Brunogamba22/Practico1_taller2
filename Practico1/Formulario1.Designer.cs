@@ -1,6 +1,6 @@
 ﻿namespace Practico1
 {
-    partial class Formulario1
+    partial class MiPrimerFroms
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Formulario1
+            // MiPrimerFroms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 476);
-            this.Name = "Formulario1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(484, 261);
+            this.Name = "MiPrimerFroms";
+            this.Text = "Mi Primer Froms";
             this.ResumeLayout(false);
 
         }

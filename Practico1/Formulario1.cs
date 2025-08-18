@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Practico1
 {
-    public partial class Formulario1 : Form
+    public partial class MiPrimerFroms : Form
     {
-        public Formulario1()
+        public MiPrimerFroms()
         {
             InitializeComponent();
         }
