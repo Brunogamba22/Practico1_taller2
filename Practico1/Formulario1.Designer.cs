@@ -34,7 +34,8 @@
             this.LNombre = new System.Windows.Forms.Label();
             this.textBoxApellido = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.textBoxMultiL = new System.Windows.Forms.TextBox();
+            this.textBoxMulti = new System.Windows.Forms.TextBox();
+            this.BSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BGuardar
@@ -46,7 +47,7 @@
             this.BGuardar.TabIndex = 0;
             this.BGuardar.Text = "Guardar";
             this.BGuardar.UseVisualStyleBackColor = false;
-            this.BGuardar.Click += new System.EventHandler(this.button1_Click);
+            this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click);
             // 
             // BEliminar
             // 
@@ -67,6 +68,7 @@
             this.LApellido.Size = new System.Drawing.Size(44, 13);
             this.LApellido.TabIndex = 2;
             this.LApellido.Text = "Apellido";
+            this.LApellido.Click += new System.EventHandler(this.LApellido_Click);
             // 
             // LNombre
             // 
@@ -91,29 +93,44 @@
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.textBoxNombre.TabIndex = 5;
             // 
-            // textBoxMultiL
+            // textBoxMulti
             // 
-            this.textBoxMultiL.Location = new System.Drawing.Point(288, 65);
-            this.textBoxMultiL.Multiline = true;
-            this.textBoxMultiL.Name = "textBoxMultiL";
-            this.textBoxMultiL.Size = new System.Drawing.Size(165, 154);
-            this.textBoxMultiL.TabIndex = 6;
-            this.textBoxMultiL.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBoxMulti.Location = new System.Drawing.Point(301, 61);
+            this.textBoxMulti.Multiline = true;
+            this.textBoxMulti.Name = "textBoxMulti";
+            this.textBoxMulti.Size = new System.Drawing.Size(145, 155);
+            this.textBoxMulti.TabIndex = 6;
+            this.textBoxMulti.TextChanged += new System.EventHandler(this.textBoxMulti_TextChanged);
+            // 
+            // BSalir
+            // 
+            this.BSalir.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BSalir.Location = new System.Drawing.Point(394, 226);
+            this.BSalir.Name = "BSalir";
+            this.BSalir.Size = new System.Drawing.Size(75, 23);
+            this.BSalir.TabIndex = 7;
+            this.BSalir.Text = "Salir";
+            this.BSalir.UseVisualStyleBackColor = false;
+            this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
             // 
             // MiPrimerFroms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 261);
-            this.Controls.Add(this.textBoxMultiL);
+            this.Controls.Add(this.BSalir);
+            this.Controls.Add(this.textBoxMulti);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.textBoxApellido);
             this.Controls.Add(this.LNombre);
             this.Controls.Add(this.LApellido);
             this.Controls.Add(this.BEliminar);
             this.Controls.Add(this.BGuardar);
+            this.KeyPreview = true;
             this.Name = "MiPrimerFroms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mi Primer Froms";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,7 +144,8 @@
         private System.Windows.Forms.Label LNombre;
         private System.Windows.Forms.TextBox textBoxApellido;
         private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.TextBox textBoxMultiL;
+        private System.Windows.Forms.TextBox textBoxMulti;
+        private System.Windows.Forms.Button BSalir;
     }
 }
 
