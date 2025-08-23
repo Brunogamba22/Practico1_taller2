@@ -31,18 +31,18 @@ namespace Practico3._2
 
         }
 
-        private void TDnombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void Tnombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
             {
                 e.Handled = true; // bloquea la tecla
             }
 
         }
 
-        private void TDapellido_KeyPress(object sender, KeyPressEventArgs e)
+        private void Tapellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
             {
                 e.Handled = true; // bloquea la tecla
             }
@@ -55,25 +55,83 @@ namespace Practico3._2
         //char.IsLetter → permite solo letras.
 
         //e.Handled = true; → bloquea el ingreso de la tecla si no cumple.
-        private void TGuardar_Click(object sender, EventArgs e)
+        private void BGuardar_Click(object sender, EventArgs e)
         {
-            // validar si alguno está vacío
-            if (string.IsNullOrWhiteSpace(LDni.Text) ||
-                string.IsNullOrWhiteSpace(LNombre.Text) ||
-                string.IsNullOrWhiteSpace(LApellido.Text))
+            // Validación de campos vacíos
+            if (string.IsNullOrWhiteSpace(TDni.Text) ||
+                string.IsNullOrWhiteSpace(Tnombre.Text) ||
+                string.IsNullOrWhiteSpace(Tapellido.Text))
             {
                 MessageBox.Show(
                     "Debe completar todos los campos",
                     "Error",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error // ícono crítico
+                    MessageBoxIcon.Error
                 );
-                return; // corta la ejecución
+                return;
             }
 
-            // si todos los campos están completos
-            // actualizar el label LModificar
-            LModificar.Text = "Cliente listo para insertar";
+            // Pregunta de confirmación
+            DialogResult ask = MessageBox.Show(
+                "¿Seguro que desea insertar un nuevo Cliente?",
+                "Confirmar Inserción",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button1 // por defecto en "Sí"
+            );
+
+            if (ask == DialogResult.Yes)
+            {
+                MessageBox.Show(
+                    $"El Cliente: {Tnombre.Text} {Tapellido.Text} se insertó correctamente",
+                    "Guardar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                // actualizar el label
+                LModificar.Text = $"Cliente listo: {Tnombre.Text} {Tapellido.Text}";
+            }
+        }
+
+        private void TEliminar_Click(object sender, EventArgs e)
+        {
+            // Mostrar mensaje de advertencia
+            DialogResult ask = MessageBox.Show(
+                $"Está a punto de eliminar el Cliente: {Tnombre.Text} {Tapellido.Text}",
+                "Confirmar Eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button2 // por defecto en "No"
+            );
+
+            if (ask == DialogResult.Yes)
+            {
+                // limpiar campos
+                TDni.Clear();
+                Tnombre.Clear();
+                Tapellido.Clear();
+                LModificar.Text = "";
+
+                // confirmar eliminación
+                MessageBox.Show(
+                    $"El Cliente: {Tnombre.Text} {Tapellido.Text} se eliminó correctamente",
+                    "Eliminar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            // Si elige No, no se hace nada
+
+        }
+
+        private void Tnombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TDni_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

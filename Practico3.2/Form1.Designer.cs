@@ -34,10 +34,10 @@
             this.LApellido = new System.Windows.Forms.Label();
             this.LModificar = new System.Windows.Forms.Label();
             this.TDni = new System.Windows.Forms.TextBox();
-            this.TDapellido = new System.Windows.Forms.TextBox();
-            this.TDnombre = new System.Windows.Forms.TextBox();
+            this.Tapellido = new System.Windows.Forms.TextBox();
+            this.Tnombre = new System.Windows.Forms.TextBox();
             this.TEliminar = new System.Windows.Forms.Button();
-            this.TGuardar = new System.Windows.Forms.Button();
+            this.BGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LDni
@@ -93,23 +93,25 @@
             this.TDni.Name = "TDni";
             this.TDni.Size = new System.Drawing.Size(100, 20);
             this.TDni.TabIndex = 5;
+            this.TDni.TextChanged += new System.EventHandler(this.TDni_TextChanged);
             this.TDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TDni_KeyPress);
             // 
-            // TDapellido
+            // Tapellido
             // 
-            this.TDapellido.Location = new System.Drawing.Point(101, 142);
-            this.TDapellido.Name = "TDapellido";
-            this.TDapellido.Size = new System.Drawing.Size(100, 20);
-            this.TDapellido.TabIndex = 6;
-            this.TDapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TDapellido_KeyPress);
+            this.Tapellido.Location = new System.Drawing.Point(101, 142);
+            this.Tapellido.Name = "Tapellido";
+            this.Tapellido.Size = new System.Drawing.Size(100, 20);
+            this.Tapellido.TabIndex = 6;
+            this.Tapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tapellido_KeyPress);
             // 
-            // TDnombre
+            // Tnombre
             // 
-            this.TDnombre.Location = new System.Drawing.Point(101, 106);
-            this.TDnombre.Name = "TDnombre";
-            this.TDnombre.Size = new System.Drawing.Size(100, 20);
-            this.TDnombre.TabIndex = 7;
-            this.TDnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TDnombre_KeyPress);
+            this.Tnombre.Location = new System.Drawing.Point(101, 106);
+            this.Tnombre.Name = "Tnombre";
+            this.Tnombre.Size = new System.Drawing.Size(100, 20);
+            this.Tnombre.TabIndex = 7;
+            this.Tnombre.TextChanged += new System.EventHandler(this.Tnombre_TextChanged);
+            this.Tnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tnombre_KeyPress);
             // 
             // TEliminar
             // 
@@ -119,26 +121,27 @@
             this.TEliminar.TabIndex = 8;
             this.TEliminar.Text = "Eliminar";
             this.TEliminar.UseVisualStyleBackColor = true;
+            this.TEliminar.Click += new System.EventHandler(this.TEliminar_Click);
             // 
-            // TGuardar
+            // BGuardar
             // 
-            this.TGuardar.Location = new System.Drawing.Point(200, 229);
-            this.TGuardar.Name = "TGuardar";
-            this.TGuardar.Size = new System.Drawing.Size(75, 23);
-            this.TGuardar.TabIndex = 9;
-            this.TGuardar.Text = "Guardar";
-            this.TGuardar.UseVisualStyleBackColor = true;
-            this.TGuardar.Click += new System.EventHandler(this.TGuardar_Click);
+            this.BGuardar.Location = new System.Drawing.Point(200, 229);
+            this.BGuardar.Name = "BGuardar";
+            this.BGuardar.Size = new System.Drawing.Size(75, 23);
+            this.BGuardar.TabIndex = 9;
+            this.BGuardar.Text = "Guardar";
+            this.BGuardar.UseVisualStyleBackColor = true;
+            this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(371, 315);
-            this.Controls.Add(this.TGuardar);
+            this.Controls.Add(this.BGuardar);
             this.Controls.Add(this.TEliminar);
-            this.Controls.Add(this.TDnombre);
-            this.Controls.Add(this.TDapellido);
+            this.Controls.Add(this.Tnombre);
+            this.Controls.Add(this.Tapellido);
             this.Controls.Add(this.TDni);
             this.Controls.Add(this.LModificar);
             this.Controls.Add(this.LApellido);
@@ -161,10 +164,10 @@
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Label LModificar;
         private System.Windows.Forms.TextBox TDni;
-        private System.Windows.Forms.TextBox TDapellido;
-        private System.Windows.Forms.TextBox TDnombre;
+        private System.Windows.Forms.TextBox Tapellido;
+        private System.Windows.Forms.TextBox Tnombre;
         private System.Windows.Forms.Button TEliminar;
-        private System.Windows.Forms.Button TGuardar;
+        private System.Windows.Forms.Button BGuardar;
     }
 }
 
