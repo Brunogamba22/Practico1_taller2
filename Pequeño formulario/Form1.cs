@@ -135,6 +135,52 @@ namespace Practico3._2
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RBMujer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBMujer.Checked) // solo si está marcado
+            {
+                pictureCliente.Image = Properties.Resources.mujer;
+            }
+        }
+
+        private void CBNaranja_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void RBVaron_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBVaron.Checked) // solo si está marcado
+            {
+                pictureCliente.Image = Properties.Resources.varon;
+            }
+        }
+
         //string.IsNullOrWhiteSpace → revisa que no esté vacío ni con solo espacios.
         //MessageBox.Show con MessageBoxIcon.Error → muestra ícono crítico (equivale al MsgBoxStyle.Critical en VB).
         //si todo está correcto → cambia el texto de LModificar.
