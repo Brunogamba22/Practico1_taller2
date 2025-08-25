@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Practico4
 {
-    public partial class Form1 : Form
+    public partial class FormularioTP4 : Form
     {
-        public Form1()
+        public FormularioTP4()
         {
             InitializeComponent();
         }
